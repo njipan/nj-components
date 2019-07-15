@@ -94,7 +94,7 @@ Using string
 You can pass with coma "," on string if you want filter more than one field (contains). 
 ```
 <nj-dropdown-list items="data" v-bind:text="displayPerson" on-filter="name,address"></nj-dropdown-list>
-``
+```
 
 
 If you want to custom the filter you can use closure.
