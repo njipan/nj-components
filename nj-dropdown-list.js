@@ -1,11 +1,11 @@
 var njDropdownList = Vue.component('nj-dropdown-list', {
     data : function(){
         return {
-            search : '',
+            search : this.default || '',
             tempData : [],
         }
     },
-    props: ['items','text', 'onFilter'],
+    props: ['items','text', 'onFilter','default'],
     methods : {
         filterByConditions : function(value, conditions){
             if(conditions.length < 1) return [];
@@ -43,6 +43,7 @@ var njDropdownList = Vue.component('nj-dropdown-list', {
         },
         onClick : function(item){
             this.$emit('change', item);
+            this.$emit('input', item);
             this.tempData = [];
             this.search = this.displayText(item);
         }
